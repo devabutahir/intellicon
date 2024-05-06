@@ -1413,8 +1413,8 @@
 								}
 							}
 							.title2{
-								font-weight: 7010;
-								font-style: 14px !important;
+								font-weight: 600;
+								font-size: 14px;
 								text-transform: uppercase;
 							}
 							img{
@@ -1736,6 +1736,119 @@
 		.menu-overlay.active {
 			visibility: visible;
 			opacity: 1;
+		}
+	}
+}
+
+
+.menu__components{
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	@include breakpoint(max-xs){
+		gap: 0 8px;
+	}
+	.search-button{
+		margin-top: 8px;
+	}
+	.search2,
+	.search{
+		@include breakpoint(max-lg){
+			margin-top: 8px;
+		}
+		i{
+			font-size: 1.2rem;
+			color: var(--white);
+		}
+	}
+	.search-popup2,
+	.search-popup {
+		// display: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 9999;
+		.search-bg2,
+		.search-bg {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, .6);
+		}
+	}
+	.cmn--btn{
+		@include breakpoint(max-lg){
+			padding: 6px 20px 10px;
+			font-size: 0.9rem;
+		}
+		@include breakpoint(max-lg){
+			padding: 5px 15px 8px;
+			font-size: 0.9rem;
+		}
+	}
+	.search-form2,
+	.search-form {
+		display: block;
+		margin: 7em 4em;
+		position: relative;
+		right: -100%;
+		form{
+			.form {
+				position: relative;
+				input{
+					outline: none;
+					width: 100%;
+					padding: 15px 15px;
+					border: none;
+					border-radius: 5px;
+					border: 1px solid var(--white);
+					color:#000;
+					background: #ECEAFE !important;
+				}
+				::placeholder{
+					color: #000;
+				}
+			}
+		}
+	}
+	.form input:focus::-webkit-input-placeholder {
+	opacity: 0;
+	}
+	.form input:focus::-moz-placeholder {
+	opacity: 0;
+	}
+	.form input:-ms-input-placeholder {
+	opacity: 0;
+	}
+	.form input:focus:-moz-placeholder {
+	opacity: 0;
+	}
+	.form label {
+	position: absolute;
+	top: 25%;
+	right: 0;
+	}
+	button{
+		padding: 0;
+		background: transparent;
+		border: none;
+		outline: none;
+		.icons{
+			i{
+				font-size: 1.3rem;
+				color: var(--white);
+			}
+		}
+	}
+	.tolly__shop{
+		margin-top: 7px;
+		i{
+			font-size: 1.2rem;
+			color: var(--white);
 		}
 	}
 }

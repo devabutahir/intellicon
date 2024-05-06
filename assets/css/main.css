@@ -1706,8 +1706,8 @@ p {
   font-size: 14px;
 }
 .header-testting-wrap .header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item .title2 {
-  font-weight: 7010;
-  font-style: 14px !important;
+  font-weight: 600;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .header-testting-wrap .header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item img {
@@ -1983,6 +1983,126 @@ p {
     visibility: visible;
     opacity: 1;
   }
+}
+
+.menu__components {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+@media (max-width: 500px) {
+  .menu__components {
+    gap: 0 8px;
+  }
+}
+.menu__components .search-button {
+  margin-top: 8px;
+}
+@media (max-width: 991px) {
+  .menu__components .search2,
+  .menu__components .search {
+    margin-top: 8px;
+  }
+}
+.menu__components .search2 i,
+.menu__components .search i {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.menu__components .search-popup2,
+.menu__components .search-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+.menu__components .search-popup2 .search-bg2,
+.menu__components .search-popup2 .search-bg,
+.menu__components .search-popup .search-bg2,
+.menu__components .search-popup .search-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 991px) {
+  .menu__components .cmn--btn {
+    padding: 6px 20px 10px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 991px) {
+  .menu__components .cmn--btn {
+    padding: 5px 15px 8px;
+    font-size: 0.9rem;
+  }
+}
+.menu__components .search-form2,
+.menu__components .search-form {
+  display: block;
+  margin: 7em 4em;
+  position: relative;
+  right: -100%;
+}
+.menu__components .search-form2 form .form,
+.menu__components .search-form form .form {
+  position: relative;
+}
+.menu__components .search-form2 form .form input,
+.menu__components .search-form form .form input {
+  outline: none;
+  width: 100%;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  color: #000;
+  background: #ECEAFE !important;
+}
+.menu__components .search-form2 form .form ::-moz-placeholder, .menu__components .search-form form .form ::-moz-placeholder {
+  color: #000;
+}
+.menu__components .search-form2 form .form ::placeholder,
+.menu__components .search-form form .form ::placeholder {
+  color: #000;
+}
+.menu__components .form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+.menu__components .form input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.menu__components .form input:-ms-input-placeholder {
+  opacity: 0;
+}
+.menu__components .form input:focus:-moz-placeholder {
+  opacity: 0;
+}
+.menu__components .form label {
+  position: absolute;
+  top: 25%;
+  right: 0;
+}
+.menu__components button {
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.menu__components button .icons i {
+  font-size: 1.3rem;
+  color: var(--white);
+}
+.menu__components .tolly__shop {
+  margin-top: 7px;
+}
+.menu__components .tolly__shop i {
+  font-size: 1.2rem;
+  color: var(--white);
 }
 
 .banner__section {
