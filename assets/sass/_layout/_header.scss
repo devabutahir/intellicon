@@ -10,6 +10,27 @@
 		border-bottom: unset;
 	}
 }
+.menu-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+	transition: all 0.9s;
+	background: var(--banner);
+	.header-wrapper{
+		border: unset;
+		@include breakpoint(lg){
+			.main-menu{
+				li{
+					a{
+						padding: 30px 0;
+					}
+				}
+			}
+		}
+	}
+}
 
 //Dark setting//
 .dark-theme{
@@ -1214,6 +1235,11 @@
 
 // -- ---------- Testing Header Running--------- -- //
 .header-testting-wrap{
+	.header-testting-inner{
+		width: 100%;
+		border-bottom: 1px solid rgb(22, 37, 87);
+		padding: 24px 5px;
+	}
 	.menu-border{
 		border: 1px solid #55545492;
 		padding: 5px;
@@ -1232,7 +1258,6 @@
 		width: 100%;
 		position: relative;
 		z-index: 99;
-		padding: 15px;
 		.logo-menu{
 			.logo{
 				max-width: 200px;
@@ -1248,13 +1273,6 @@
 				}
 			}
 		}
-
-		.item-left {
-			flex: 0 0 17%;
-		}
-		// .item-center {
-		// 	flex: 0 0 66%;
-		// }
 		.item-right {
 			flex: 0 0 17%;
 			display: flex;
@@ -1270,7 +1288,7 @@
 		}
 		.menu-mitem{
 			i{
-				color: var(--themetext);
+				color: #fff;
 				font-size: 24px;
 				line-height: 1px;
 			}
@@ -1290,7 +1308,7 @@
 					>a {
 						font-size: 15px;
 						font-weight: 500;
-						color: var(--themetext);
+						color: #fff;
 						position: relative;
 						text-transform: capitalize;
 						transition: color 0.3s ease;
@@ -1466,7 +1484,21 @@
 		.mobile-menu-trigger {
 			display: none;
 		}
-
+		@include breakpoint(max-lg){
+			.menu{
+				background: url(../../assets/img/page-case/menu-bg.png) no-repeat center center;
+				background-size: cover;
+			}
+			.logo-menu{
+				.logo-small{
+					img{
+						width: 40px;
+						height: 100%;
+						object-fit: contain;
+					}
+				}
+			}
+		}
 	}
 	
 	/*responsive*/
@@ -1510,10 +1542,6 @@
 		}
 
 		.header {
-			.item-center {
-				order: 3;
-				flex: 0 0 100%;
-			}
 			.item-left {
 				flex: 0 0 auto;
 			}
@@ -1562,6 +1590,7 @@
 				left: 0;
 				top: 0;
 				height: 100%;
+				height: 100vh;
 				overflow: hidden;
 				transform: translate(-100%);
 				transition: all 0.5s ease;
@@ -1668,18 +1697,19 @@
 				.mobile-menu-head {
 					display: flex;
 					height: 50px;
-					border-bottom: 1px solid rgba(0,0,0,0.1);
+					background: url(../../assets/img/page-case/menu-bg.png) no-repeat bottom center;
+					background-size: cover;
+					border-bottom: 1px solid rgba(22, 37, 87, 0.952);
 					justify-content: space-between;
 					align-items: center;
 					position: relative;
 					z-index: 501;
 					position: sticky;
-					background-color: var(--white);
 					top: 0;
 					.go-back {
 						height: 50px;
 						width: 50px;
-						border-right: 1px solid rgba(0,0,0,0.1);
+						border-right: 1px solid rgba(22, 37, 87, 0.885);
 						cursor: pointer;
 						line-height: 50px;
 						text-align: center;
@@ -1687,22 +1717,22 @@
 						font-size: 16px;
 						i{
 							font-size: 16px;
-							color: var(--themetext);
+							color: #fff;
 						}
 					}
 					.current-menu-title {
 						font-size: 15px;
 						font-weight: 500;
-						color: var(--themetext);
+						color: #fff;
 					}
 					.mobile-menu-close {
 						height: 50px;
 						width: 50px;
-						border-left: 1px solid rgba(0,0,0,0.1);
+						border-left: 1px solid rgba(22, 37, 87, 0.952);
 						cursor: pointer;
 						line-height: 50px;
 						text-align: center;
-						color: var(--themetext);
+						color: #fff;
 						font-size: 25px;
 					}
 				}
@@ -1715,6 +1745,7 @@
 					height: 100%;
 					overflow-x: hidden;
 					overflow-y: auto;
+					padding-top: 24px;
 				}
 			}
 			.menu.active {
@@ -1728,6 +1759,7 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
+			height: 100vh;
 			z-index: 1098;
 			visibility: hidden;
 			opacity: 0;
@@ -1740,12 +1772,23 @@
 	}
 }
 
+.mode--toggle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--base);
+    position: relative;
+    border: 1px solid var(--sunborder);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 .menu__components{
 	display: flex;
 	align-items: center;
 	gap: 25px;
-	@include breakpoint(max-xs){
+	@include breakpoint(max-xxl){
 		gap: 0 8px;
 	}
 	.search-button{
@@ -1763,7 +1806,6 @@
 	}
 	.search-popup2,
 	.search-popup {
-		// display: none;
 		position: fixed;
 		top: 0;
 		right: 0;
@@ -1786,8 +1828,8 @@
 			font-size: 0.9rem;
 		}
 		@include breakpoint(max-lg){
-			padding: 5px 15px 8px;
-			font-size: 0.9rem;
+			padding: 4px 14px 7px;
+			font-size: 0.8rem;
 		}
 	}
 	.search-form2,
@@ -1853,4 +1895,7 @@
 	}
 }
 
+.dbg{
+	background: #000;
+}
 // -- ---------- Testing Header Running--------- -- //

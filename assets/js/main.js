@@ -366,6 +366,30 @@ $(document).ready(function () {
 	});
 	//--Owl Carousel--//
 
+	//menu top fixed bar
+	var fixed_top = $(".header-section");
+	$(window).on("scroll", function () {
+		if ($(this).scrollTop() > 220) {
+			fixed_top.addClass("menu-fixed animated fadeInDown");
+			fixed_top.removeClass("slideInUp");
+			$("body").addClass("body-padding");
+		} else {
+			fixed_top.removeClass("menu-fixed fadeInDown");
+			fixed_top.addClass("slideInUp");
+			$("body").removeClass("body-padding");
+		}
+	});
+	//menu top fixed bar
+	$(".scrollToTop").on("click", function () {
+		$("html, body").animate(
+			{
+				scrollTop: 0,
+			},
+			700
+		);
+		return false;
+	});
+
 	const menu = document.querySelector(".menu");
 	const menuMain = menu.querySelector(".menu-main");
 	const goBack = menu.querySelector(".go-back");
